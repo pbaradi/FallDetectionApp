@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FallDetectionApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fall Detection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP4-oT-1ia">
+                                <rect key="frame" x="16" y="60" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwR-nD-rey">
+                                <rect key="frame" x="16" y="308" width="343" height="51"/>
+                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiK-Jc-P9k">
+                                <rect key="frame" x="42" y="563" width="38" height="30"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c1R-N7-SmY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5v-rW-ah3">
+                                <rect key="frame" x="299" y="563" width="32" height="30"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Fr-w7-j9G"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fP4-oT-1ia" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="1l0-ly-I1J"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="fP4-oT-1ia" secondAttribute="leading" id="3tO-gR-IQF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j5v-rW-ah3" secondAttribute="trailing" constant="28" id="4VZ-tH-zdg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fP4-oT-1ia" secondAttribute="trailing" id="4d1-78-QrL"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WwR-nD-rey" secondAttribute="bottom" constant="308" id="6LF-QP-eBG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WwR-nD-rey" secondAttribute="trailing" id="RIT-Bo-s1i"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IiK-Jc-P9k" secondAttribute="bottom" constant="74" id="aJf-d2-1KO"/>
+                            <constraint firstItem="WwR-nD-rey" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l4C-Ml-o9E"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="WwR-nD-rey" secondAttribute="leading" id="o0w-g9-7oC"/>
+                            <constraint firstItem="IiK-Jc-P9k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="26" id="sOI-uZ-gKI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="j5v-rW-ah3" secondAttribute="bottom" constant="74" id="xxK-nr-F2n"/>
+                            <constraint firstItem="WwR-nD-rey" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zzr-Cw-4xB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="WwR-nD-rey" id="ybi-h3-9Er"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.5" y="102.5"/>
+        </scene>
+    </scenes>
+</document>
