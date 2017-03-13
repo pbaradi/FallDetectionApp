@@ -36,34 +36,6 @@ class ViewController: UIViewController {
         self.stopAccelerometer()
         self.label.text = "Label"
     }
-    func startAltimeter() {
-        
-        print("Started relative altitude updates.")
-        
-        // Check if altimeter feature is available
-        if (CMAltimeter.isRelativeAltitudeAvailable()) {
-            
-            // Start altimeter updates, add it to the main queue
-            self.altimeter.startRelativeAltitudeUpdates(to: OperationQueue.main, withHandler: { (altitudeData:CMAltitudeData?, error:Error?) in
-                
-                if (error != nil) {
-                    self.stopAltimeter()
-                    
-                } else {
-                    
-                    let altitude = altitudeData!.relativeAltitude.floatValue    // Relative altitude in meters
-                    let pressure = altitudeData!.pressure.floatValue            // Pressure in kilopascals
-                    
-                    print(altitude)
-                    print(pressure)
-                }
-            })
-            
-        } else {
-            print("Barometer not available on this device.")
-        }
-        
-    }
     
     func startAccelerometer(){
         motionManager.accelerometerUpdateInterval = 0.2
@@ -90,54 +62,9 @@ class ViewController: UIViewController {
         }
     }
     
-    func startDeviceMotion(){
-        motionManager.deviceMotionUpdateInterval = 0.2
-        if motionManager.isDeviceMotionAvailable {
-            motionManager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {
-                motionData, error in
-                print(motionData!.gravity)
-            })
-        }
-    }
-    
-    func startGyroscope(){
-        motionManager.gyroUpdateInterval = 0.2
-        if motionManager.isGyroAvailable {
-            motionManager.startGyroUpdates(to: OperationQueue.current!, withHandler: { gyroData, error in
-                
-                let gyro = gyroData?.rotationRate
-                print((gyro?.x)!)
-                print((gyro?.y)!)
-                print((gyro?.z)!)
-                
-                let magnitude = sqrt(pow((gyro?.x)!, 2) + pow((gyro?.y)!, 2) + pow((gyro?.z)!, 2))
-                print("magnitude is \(magnitude)")
-                if magnitude > 1 {
-                    print("Fall Detected")
-                    self.label.text = "Fall Detected"
-                    return
-                }
-            })
-        }
-    }
-    
-    func stopGyroscope(){
-        motionManager.stopGyroUpdates()
-    }
     
     func stopAccelerometer(){
         motionManager.stopAccelerometerUpdates()
-    }
-
-    
-    func stopAltimeter() {
-        self.altimeter.stopRelativeAltitudeUpdates()
-        print("Stopped relative altitude updates.")
-        
-    }
-    
-    func stopDeviceMotion(){
-        motionManager.stopDeviceMotionUpdates()
     }
 
 }
